@@ -1,0 +1,33 @@
+name: addressbook-app CI
+on:
+ - push
+ - workflow_dispatch
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+     - name: get code
+       uses: actions/checkout@v4
+     - name: compile using maven
+       run: mvn compile
+  code-review:
+    runs-on: ubuntu-latest
+    steps:
+     - name: get code
+       uses: actions/checkout@v4
+     - name: codereview using maven
+       run: mvn -P metrics pmd:pmd
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+     - name: get code
+       uses: actions/checkout@v4
+     - name: unitest using maven
+       run: mvn test
+  package:
+    runs-on: ubuntu-latest
+    steps:
+     - name: get code
+       uses: actions/checkout@v4
+     - name: package using maven
+       run: mvn package
