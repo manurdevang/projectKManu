@@ -9,7 +9,7 @@ jobs:
       - name: second step
         run: df -h
   job2:
-    runs-n: ubuntu-latest
+    runs-on: ubuntu-latest
     steps: 
      - name: task1 
        run: echo "how are you"  
