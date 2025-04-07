@@ -1,0 +1,16 @@
+name: My First GitHub Action/Workflow
+on: workflow_dispatch   # allows to trigger the workflow manullay
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: frist step
+        run: echo "hi there"
+      - name: second step
+        run: df -h
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+     - name: task1
+       run: echo "how are you"
+
